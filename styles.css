@@ -1,0 +1,165 @@
+/* Basic Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Nav Bar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #ffc107;
+  color: #100f0f;
+}
+
+.logo {
+  font-family: "Anton", sans-serif;
+  font-size: 30px;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+}
+
+.navLinks li {
+  margin: 0 15px;
+}
+
+.navLinks a {
+  color: #100f0f;
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.dropdown {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #ffc107;
+  padding: 10px;
+}
+
+.dropdown li a {
+  color: #100f0f;
+  text-decoration: none;
+}
+
+.dropdown.show {
+  display: flex;
+}
+
+/* hero Section */
+.hero {
+  background-image: url("/images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #100f0f;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+}
+
+/* menu  card Section */
+.menuTitle {
+  font-size: 50px;
+  margin: 10px;
+  text-align: center;
+}
+.menuSection {
+  padding: 20px 20px;
+}
+
+.menuContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.menu {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.menu img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.menu h2 {
+  margin: 15px 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .menuContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    font-size: 30px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dropdown.show {
+    display: none;
+  }
+}
